@@ -1,0 +1,61 @@
+-- Create the database
+CREATE DATABASE APAVS_DB;
+GO
+
+USE APAVS_DB;
+GO
+
+CREATE TABLE Tools (
+    ToolID      CHAR(6)     PRIMARY KEY   -- e.g. CSB801
+);
+
+CREATE TABLE LoadPorts (
+    ToolID      CHAR(6)     NOT NULL,
+    PortName    CHAR(3)     NOT NULL,     -- LP1, LP2, LP3
+    PRIMARY KEY (ToolID, PortName),
+    FOREIGN KEY (ToolID) REFERENCES Tools(ToolID)
+);
+
+CREATE TABLE QualificationRuns (
+    RunID           INT             PRIMARY KEY,
+    ToolID          CHAR(6)         NOT NULL,
+    PortName        CHAR(3)         NOT NULL,
+    RunDateTime     DATETIME        NOT NULL,
+    TaughtZ         DECIMAL(6,2)    NOT NULL,
+    OverallResult   VARCHAR(4)      NOT NULL CHECK (OverallResult IN ('PASS', 'FAIL')),
+    FOREIGN KEY (ToolID, PortName) REFERENCES LoadPorts(ToolID, PortName)
+);
+
+-------------------------------------------------------------------------------------
+
+USE master;
+GO
+DROP DATABASE APAVS_DB;
+GO
+CREATE DATABASE APAVS_DB;
+GO
+USE APAVS_DB;
+GO
+
+CREATE TABLE Tools (
+    ToolID      CHAR(6)      PRIMARY KEY,  -- e.g. CSB203
+    CEID        VARCHAR(10)  NOT NULL       -- e.g. CSBca, CSBcd
+);
+
+CREATE TABLE LoadPorts (
+    ToolID      CHAR(6)      NOT NULL,
+    PortName    CHAR(3)      NOT NULL,      -- LP1, LP2, LP3
+    PRIMARY KEY (ToolID, PortName),
+    FOREIGN KEY (ToolID) REFERENCES Tools(ToolID)
+);
+
+CREATE TABLE QualificationRuns (
+    RunID           INT             PRIMARY KEY,
+    ToolID          CHAR(6)         NOT NULL,
+    PortName        CHAR(3)         NOT NULL,
+    RunDateTime     DATETIME        NOT NULL,
+    TaughtZ         DECIMAL(6,2)    NOT NULL,
+    OverallResult   VARCHAR(4)      NOT NULL CHECK (OverallResult IN ('PASS','FAIL')),
+    FOREIGN KEY (ToolID, PortName) REFERENCES LoadPorts(ToolID, PortName)
+);
+GO
