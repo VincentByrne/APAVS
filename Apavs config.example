@@ -1,0 +1,20 @@
+{
+  "sqlServer": "localhost\\SQLEXPRESS",
+  "database": "APAVS_DB",
+  "stagingFolder": "C:\\APAVS\\Staging",
+  "logFolder": "C:\\APAVS\\Logs",
+  "tools": [
+    {
+      "id": "CSBxxx",
+      "ceid": "CSBca",
+      "ip": "10.x.x.x",
+      "ports": 2
+    },
+    {
+      "id": "CSBxxx",
+      "ceid": "CSBce",
+      "ip": "10.x.x.x",
+      "ports": 2
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# APAVS .gitignore
+
+# Real tool data (Intel confidential)
+MappingData.log
+RobotConfig.log
+RobotCalibration.log
+robot_1_config.txt
+robot_2_config.txt
+PodData*.txt
+Fi_logs_location*
+Location_of_files*
+F24_FI_Mapping_Macro.xlsm
+
+# Config with real IP addresses
+APAVS_Config.json
+
+# PowerShell logs and staging data
+/Staging/
+/Logs/
+/Archive/
+
+# Power BI temp files
+*.pbix.tmp
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vs/
+*.suo
