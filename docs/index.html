@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APAVS - Automated Pipeline and Visualisation System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0f1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #1e293b;
+            margin-bottom: 40px;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .photo-placeholder {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #3b82f6;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1e293b;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #3b82f6;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .academic-title {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* Abstract */
+        .abstract {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-left: 4px solid #3b82f6;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .abstract h2 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .abstract p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        /* Links Section */
+        .links {
+            margin-bottom: 40px;
+        }
+
+        .links h2 {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .link-item:hover {
+            border-color: #3b82f6;
+            background: #1a2234;
+        }
+
+        .link-label {
+            font-weight: 600;
+            font-size: 15px;
+            color: #ffffff;
+            min-width: 160px;
+        }
+
+        .link-desc {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .link-icon {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
+        .coming-soon {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .coming-soon .link-desc::after {
+            content: " (coming soon)";
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #475569;
+            font-size: 13px;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <!-- Replace with your photo: <img src="photo.jpg" class="photo" alt="Vincent Byrne"> -->
+            <div class="photo-placeholder">Photo</div>
+
+            <h1>Vincent Byrne</h1>
+            <div class="subtitle">APAVS — Automated Pipeline and Visualisation System</div>
+            <div class="academic-title">HDip in Computer Science — Capstone Project</div>
+            <div class="institution">South East Technological University (SETU) · 2026</div>
+        </div>
+
+        <div class="abstract">
+            <h2>Abstract</h2>
+            <p>
+                APAVS automates the monitoring of load port qualification data across a fleet 
+                of semiconductor manufacturing tools. Currently, technicians manually export log 
+                files, run Excel macros, and visually inspect qualification plots for individual 
+                tools with no fleet-wide visibility. APAVS replaces this workflow with a PowerShell 
+                extraction pipeline that retrieves data from tool hard drives, parses raw sensor 
+                logs, calculates slot-level offsets, and feeds the results into a SQL Server database. 
+                A Power BI dashboard provides real-time pass/fail status, trend analysis, and 
+                fleet-wide visibility across the tool set, enabling engineers to identify drift 
+                before it impacts production.
+            </p>
+        </div>
+
+        <div class="links">
+            <h2>Project Deliverables</h2>
+
+            <a href="https://github.com/VincentByrne/APAVS" class="link-item" target="_blank">
+                <span class="link-icon">📦</span>
+                <span class="link-label">GitHub Repository</span>
+                <span class="link-desc">Source code, scripts, and documentation</span>
+            </a>
+
+            <a href="#" class="link-item coming-soon">
+                <span class="link-icon">📄</span>
+                <span class="link-label">Final Report</span>
+                <span class="link-desc">Project report PDF</span>
+            </a>
+
+            <a href="#" class="link-item coming-soon">
+                <span class="link-icon">🎬</span>
+                <span class="link-label">Demo Video</span>
+                <span class="link-desc">Project demonstration</span>
+            </a>
+
+            <a href="#" class="link-item coming-soon">
+                <span class="link-icon">📋</span>
+                <span class="link-label">Project Plan</span>
+                <span class="link-desc">Sprint planning and progress tracking</span>
+            </a>
+
+            <a href="#" class="link-item coming-soon">
+                <span class="link-icon">📊</span>
+                <span class="link-label">Presentation</span>
+                <span class="link-desc">Final presentation slides</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            Vincent Byrne · 20108898 · SETU HDip Computer Science · 2026
+        </div>
+
+    </div>
+</body>
+</html>
